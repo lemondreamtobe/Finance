@@ -54,14 +54,14 @@ PersonalFiance.prototype = {
         var getDay = getDate.getFullYear() + ' ' + (getDate.getMonth() + 1) + ' ' + getDate.getDate();
         logObject.type = type;
         logObject.get = num;
-        logObject.getDay =getDate;
+        logObject.getDay =getDay;
         logObject.getSource = source;
 
         if (this.getLog[getDay]) {
-            this.payLog[getDay].push(logObject);
+            this.getLog[getDay].push(logObject);
         } else {
-            this.payLog[getDay] =[];
-            this.payLog[getDay].push(logObject);
+            this.getLog[getDay] =[];
+            this.getLog[getDay].push(logObject);
         };
         return this;
     },
