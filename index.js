@@ -2,7 +2,7 @@
  * Created by feng on 2017/7/31.
  */
 
-//7.31号开始的个人花费记录
+//个人花费记录
 function PersonalFiance() {
     var my = this;
     my.payLog = {};
