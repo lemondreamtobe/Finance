@@ -67,5 +67,17 @@ PersonalFiance.prototype = {
     },
     check : function (type, date) {
 
+    },
+    checkCard : function () {
+        return this.card;
+    },
+    checkCash : function () {
+        return this.cash;
+    },
+    checkYct : function () {
+        return this.yct;
+    },
+    checkAll : function () {
+        return this.card + this.cash;
     }
 };
