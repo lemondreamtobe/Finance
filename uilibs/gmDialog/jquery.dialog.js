@@ -25,7 +25,7 @@
 				var dialoghtml = "";
 				dialoghtml += "<div class='gm-overlay' style='position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden;z-index:9999;'>";
 					dialoghtml += "<div class='gm-dialog' style='width: 800px;height: 600px;background-color: white;position: relative;margin: 0 auto;'>";
-						dialoghtml += 	"<div class='dialog-title' style='padding: 7px;background-color: #0078D7;color: #fff;height: 36px;'>";
+						dialoghtml += 	"<div class='dialog-title' style='padding: 7px;background-color: #02A3FA;color: #fff;height: 36px;'>";
 							dialoghtml += "<p style='margin:0;font-size:18px;float:left;'>" + settings.title +"</p>";
 							dialoghtml += "<a href='javascript:void(0);' class='dialog-close' style='float: right;'><i class='fa fa-times' style='color: #fff;'></i></a>";
 						dialoghtml += "</div>";
