@@ -156,3 +156,124 @@
 .butpro .sub {
   padding-top: 4px;
 }
+.cl-mcont .row {
+  margin-top: 20px;
+}
+.dash-cols .block .no-padding {
+  padding: 0;
+}
+.block-transparent .header {
+  padding: 0 5px;
+  border-bottom: 1px solid #E1E1E1;
+  margin-bottom: 15px;
+}
+table.no-border {
+  border: 0;
+}
+.nano {
+  position : relative;
+  width    : 100%;
+  height   : 100%;
+  overflow : hidden;
+}
+.nano .content {
+  position      : absolute;
+  overflow      : scroll;
+  overflow-x    : hidden;
+  top           : 0;
+  right         : 0;
+  bottom        : 0;
+  left          : 0;
+}
+.nano .content:focus {
+  outline: thin dotted;
+}
+.nano .content::-webkit-scrollbar {
+  visibility: hidden;
+}
+.butpro .sub {
+  padding-top: 4px;
+}
+/*Flot Charts*/
+.blue-chart .flot-text,
+.red-chart .flot-text {
+  color: #FFF !important;
+}
+.cl-mcont .block .content {
+  padding: 20px;
+}
+.cl-mcont .block .stat-data,
+.cl-mcont .block-flat .stat-data {
+  padding: 10px;
+  float: left;
+  width: 50%;
+}
+.cl-mcont .block .stat-data h2,
+.cl-mcont .block-flat .stat-data h2 {
+  margin: 0 0 5px 0;
+}
+.cl-mcont .block .stat-data span,
+.cl-mcont .block-flat .stat-data span {
+  font-size: 18px;
+}
+.cl-mcont .block .stat-data .stat-blue,
+.cl-mcont .block-flat .stat-data .stat-blue {
+  background: #43A0F2;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  text-align: center;
+  color: #FFF;
+  padding: 20px 10px;
+}
+.cl-mcont .block .stat-data .stat-number,
+.cl-mcont .block-flat .stat-data .stat-number {
+  border-bottom: 1px solid #dadada;
+}
+.cl-mcont .block .stat-data .stat-number:last-child,
+.cl-mcont .block-flat .stat-data .stat-number:last-child {
+  border-bottom: 0;
+}
+.cl-mcont .block .stat-data .stat-number div,
+.cl-mcont .block-flat .stat-data .stat-number div {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 5px 5px;
+  font-size: 16px;
+  line-height: 20px;
+}
+.cl-mcont .block .stat-data .stat-number h2,
+.cl-mcont .block-flat .stat-data .stat-number h2 {
+  margin: 0;
+  font-size: 35px;
+  color: #444;
+  font-weight: 300;
+}
+.cl-mcont .block .stat-data .stat-number span,
+.cl-mcont .block-flat .stat-data .stat-number span {
+  font-size: 12px;
+}
+.block .fact-data,
+.widget-block .fact-data,
+.block-flat .fact-data {
+  margin: 25px 0;
+  padding: 0 20px;
+  display: inline-block;
+  width: 49%;
+  vertical-align: top;
+}
+.block .total-data,
+.widget-block .total-data,
+.block-flat .total-data {
+  padding: 15px;
+  display: inline-block;
+  width: 100%;
+  vertical-align: top;
+  position: relative;
+}
+.block .dropdown-menu,
+.widget-block .dropdown-menu,
+.block-flat .dropdown-menu {
+  margin: -1px 0 0 0;
+  border-radius: 1px;
+  -webkit-border-radius: 1px;
+}

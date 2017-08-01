@@ -691,7 +691,7 @@ body.modal-open,
   line-height: 1.3em;
 }
 #cl-wrapper {
-  padding-top: 50px;
+ 
 }
 /*Vertical Navigation*/
 .cl-sidebar {
@@ -1002,7 +1002,7 @@ body {
   vertical-align: top;
 }
 .cl-mcont .row {
-  margin-top: 20px;
+  
 }
 .cl-mcont .col-lg-6 {
   padding: 0 15px;
