@@ -39,12 +39,15 @@
 <body>
 
   <!-- Fixed navbar -->
+
 	<div id="cl-wrapper" class="fixed-menu">
+	
 		<div class="container-fluid" id="pcont">
 		  <div class="cl-mcont">
-		  	<div class="stats_bar">
+		  
+			<div class="stats_bar">
 				<div class="butpro butstyle" data-step="2" data-intro="<strong>Beautiful Elements</strong> <br/> If you are looking for a different UI, this is for you!.">
-					<div class="sub"><h2>Cards</h2><span id="total_clientes">3983.61</span></div>
+					<div class="sub"><h2>Card</h2><span id="total_clientes">3535.61</span></div>
 					<div class="stat"><span class="glyphicon glyphicon-credit-card"></span></div>
 				</div>
 				<div class="butpro butstyle">
@@ -52,12 +55,12 @@
 					<div class="stat"><span class="glyphicon glyphicon-usd"></span></div>
 				</div>
 				<div class="butpro butstyle">
-					<div class="sub"><h2>Yct</h2><span>125</span></div>
-					<div class="stat"><span class="glyphicon glyphicon-tower"></span></div>
+					<div class="sub"><h2>Yct</h2><span>102.4</span></div>
+					<div class="stat"><span class="glyphicon glyphicon-tower"></div>
 				</div>	
 				<div class="butpro butstyle">
-					<div class="sub"><h2>Total</h2><span>5683.61</span></div>
-					<div class="stat"><span class="glyphicon  glyphicon-signal"></span></div>
+					<div class="sub"><h2>Total</h2><span>5235.61</span></div>
+					<div class="stat"><span class="glyphicon  glyphicon-signal"></div>
 				</div>	
 				<div class="butpro butstyle">
 					<div class="sub"><h2>Benefit</h2><span>3%</span></div>
@@ -69,9 +72,8 @@
 				</div>	
 
 			</div>
+			
 			<div class="row dash-cols">
-				
-				<div class="row dash-cols">
 		        <div class="col-sm-6 col-md-6">
 		          <div class="widget-block  white-box calendar-box">
 		            <div class="col-md-6 blue-box calendar no-padding">
@@ -79,27 +81,28 @@
 		            </div>
 		            <div class="col-md-6">
 		              <div class="padding">
-		                <h2 class="text-center">Monday</h2>
-		                <h1 class="day">2</h1>
+		                <h2 class="text-center" id="DateShow"></h2>
+		                <h1 class="day" id="DayShow"></h1>
 		              </div>
 		            </div>
 		          </div>
 		        </div>
-				<div class="col-sm-6 col-md-6">
-					<div class="widget-block photo white-box weather-box">
-			            <div class="col-md-6 padding photo">
-			              <h2 class="text-center">Monday</h2>
-			              <h1 class="day">10/12/2013</h1>
-			            </div>
-			            <div class="col-md-6 red-box">
-			              <div class="padding text-center">
-			                <canvas id="sun-icon" width="130" height="215"></canvas>
-			              </div>
-			            </div>
-			          </div>
-				</div>		
-			
+		        <div class="col-sm-6 col-md-6">
+		        	<div class="widget-block photo white-box weather-box">
+		            <div class="col-md-6 padding photo">
+		              <h2 class="text-center" id="DateShow2"></h2>
+		              <h1 class="day" id="DayDayShow"></h1>
+		            </div>
+		            <div class="col-md-6 red-box">
+		              <div class="padding text-center">
+		                <canvas id="sun-icon" width="130" height="215"></canvas>
+		              </div>
+		            </div>
+		          </div>
+		        </div>	
 			</div>
+			<div class="row dash-cols">
+			
 				<div class="col-sm-6 col-md-6">
 					<div class="block">
 						<div class="header no-border">
@@ -249,6 +252,54 @@
 						</div>
 				</div>		
 			</div>
+
+			
+			
+			<div class="row dash-cols">
+				<div class="col-sm-6 col-md-6 col-lg-4">
+					<div class="widget-block">
+						<div class="white-box padding">
+							<div class="row info">
+								<div>
+									<h3>Your Goals</h3>
+								</div>
+								<div>
+									<div id="com_stats" style="height:98px;"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>	
+				<div class="col-sm-6 col-md-6 col-lg-4">
+					<div class="widget-block">
+						<div class="white-box padding">
+							<div class="row info text-shadow">
+								<div class="col-xs-12">
+									<h3>Comments</h3>
+								</div>
+								<div class="col-xs-12">
+									<div id="com2_stats" style="height:98px;"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>	
+				<div class="col-sm-6 col-md-6 col-lg-4">
+					<div class="widget-block">
+						<div class="white-box">
+							<div class="fact-data">
+								<div class="epie-chart" data-percent="45"><span>0%</span></div>
+							</div>
+							<div class="fact-data no-padding text-shadow">
+								<h3>Users sales</h3>
+								<h2>4,522</h2>
+								<p>Monthly sales from users.</p>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</div>
+		
 		  </div>
 		</div> 
 		
@@ -280,8 +331,47 @@
         App.init();
         App.dashBoard();        
         
-//        introJs().setOption('showBullets', false).start();
-
+//      introJs().setOption('showBullets', false).start();
+		var date = new Date();
+		switch (date.getDay()) {
+			case 0 :
+				day = '星期日';
+				$('#DateShow').html('星期日');
+				$('#DateShow2').html('星期日');
+				break;
+			case 1 :
+				day = '星期一';
+				$('#DateShow').html('星期一');
+				$('#DateShow2').html('星期一');
+				break;
+			case 2 :
+				day = '星期二';
+				$('#DateShow').html('星期二');
+				$('#DateShow2').html('星期二');
+				break;
+			case 3 :
+				day = '星期三';
+				$('#DateShow').html('星期三');
+				$('#DateShow2').html('星期三');
+				break;
+			case 4 :
+				day = '星期四';
+				$('#DateShow').html('星期四');
+				$('#DateShow2').html('星期四');
+				break;
+			case 5 :
+				day = '星期五';
+				$('#DateShow').html('星期五');
+				$('#DateShow2').html('星期五');
+				break;
+			case 6 :
+				day = '星期六';
+				$('#DateShow').html('星期六');
+				$('#DateShow2').html('星期六');
+				break;
+		}
+		$('#DayShow').html(date.getDate());
+		$('#DayDayShow').html(date.getFullYear() + ' ' + (date.getMonth() + 1) + ' ' + date.getDate());
       });
     </script>
     <script src="../js/behaviour/voice-commands.js"></script>
