@@ -31,7 +31,7 @@ Login.prototype = {
             dragEnabled: true,
             iframeUrl: '/Finance/register/register.html',
             width: 408,
-            height: 420
+            height: 400
         });
     }
 };

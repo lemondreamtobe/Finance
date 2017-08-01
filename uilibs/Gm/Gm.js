@@ -61,7 +61,7 @@ var Gm = {
 
     },
     Tools: {
-       
+
     },
     String: {
         trim: function (s) {
