@@ -79,5 +79,15 @@ PersonalFiance.prototype = {
     },
     checkAll : function () {
         return this.card + this.cash;
+    },
+    checkAllCost : function () {
+
+        var totalCost = 0;
+        for (var i in this.payLog) {
+            for (var j = 0; j < this.payLog[i].length; j++) {
+                totalCost += this.payLog[i][j].cost;
+            }
+        };
+        return totalCost;
     }
 };
