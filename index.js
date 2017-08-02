@@ -3,13 +3,13 @@
  */
 
 //个人花费记录
-function PersonalFiance() {
+function PersonalFiance(info) {
     var my = this;
     my.payLog = {};
     my.getLog = {};
-    my.card = 4071.61;
-    my.cash = 1700;
-    my.yct = 110;
+    my.card = info.card; //4071.61
+    my.cash = info.cash; //1700
+    my.yct = info.yct; //110
 };
 PersonalFiance.prototype = {
     constructor : PersonalFiance,
@@ -89,5 +89,21 @@ PersonalFiance.prototype = {
             }
         };
         return totalCost;
+    },
+    checkCostLip : function () {
+        var totalCostStr = '';
+        for (var i in this.payLog) {
+            for (var j = 0; j < this.payLog[i].length; j++) {
+                totalCostStr += ('I paid ' + this.payLog[i][j].cost + ' of ' + this.payLog[i][j].type + ' to do ' + this.payLog[i][j].costPurpose +' in ' +this.payLog[i][j].costDay  + '\n');
+            };
+        };
+        totalCostStr += 'The total is: ' + this.checkAllCost();
+        console.log(totalCostStr);
+    },
+    ifCanSubway : function () {
+
+        if (this.yct <= 2) {
+            alert('羊城通余额已不足'); //这里可用作观察者模式
+        }
     }
 };
