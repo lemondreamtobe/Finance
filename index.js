@@ -88,7 +88,7 @@ PersonalFiance.prototype = {
                 totalCost += this.payLog[i][j].cost;
             }
         };
-        return totalCost;
+        return Math.floor(totalCost);
     },
     checkCostLip : function () {
         var totalCostStr = '';
@@ -104,6 +104,8 @@ PersonalFiance.prototype = {
 
         if (this.yct <= 2) {
             alert('羊城通余额已不足'); //这里可用作观察者模式
+        } else {
+            alert('of course');
         }
     }
 };
