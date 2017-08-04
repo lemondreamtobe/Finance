@@ -67,4 +67,137 @@ $(function () {
                 $('.time-area').addClass('hidden');
             }
         });
+    initTable();
+    $('#btnSearch').on('click', onSearch);
+
 });
+var Lemon = new PersonalFiance({
+    card : 4071.61,
+    cash : 1700,
+    yct : 110
+});
+Lemon.cost('card', 78, '2017 7 31', 'Buy fruit of Mango')
+    .cost('yct', 1.9 * 2, '2017 7 31', 'Subway')
+    .cost('yct', 1.9 * 2, '2017 8 1', 'Subway')
+    .cost('card', 10, '2017 8 1', 'Jquery B to buy model')
+    .cost('card', 448, '2017 8 1', 'JD baitiao')
+    .cost('yct', 1.9 * 2, '2017 8 2', 'Subway')
+    .cost('card', 24, '2017 8 2', 'Net cost')
+    .cost('card', 35, '2017 8 3', 'Bee mi')
+    .cost('yct', 1.9 * 2, '2017 8 3', 'Subway')
+    .cost('yct', 1.9 * 2, '2017 8 4', 'Subway')
+function initTable(data) {
+    //先销毁表格
+    $('.table').bootstrapTable('destroy');
+
+    $('.table').bootstrapTable({
+        data: data,
+        pagination: false,
+        height: '600px'
+    });
+};
+var params = {};
+var page = 0;
+var pageCount = -1;
+function onSearch() {
+    params = {};
+    page = 0;
+    pageCount = -1;
+    var selectType = $("#selectType").val(); //查询类型
+    var selectTime = $("#selectTime").val(); //查询时间
+    var costType = $('#costType').val(); //金额类型
+    var beginTime = null;
+    var endTime = null;
+    switch($('#selectTime').val()) {
+        case "1":
+            var now = new Date();
+            endTime = Math.floor(now.getTime());
+            beginTime = Math.floor(new Date(now.getTime() - 7 * 24 * 3600 * 1000).getTime());
+            break;
+        case "2":
+            var now = new Date();
+            endTime = Math.floor(now.getTime());
+            beginTime = Math.floor(now.setMonth(now.getMonth() - 1));
+            break;
+        case "3":
+            var timeS = $('#timeStart').val() + ' 00:00:00';
+            var timeE = $('#timeEnd').val() + ' 23:59:59';
+            beginTime = getTimeByDateStr(timeS);
+            endTime = getTimeByDateStr(timeE);
+            break;
+    }
+
+    params = {
+        "selectType": selectType,
+        "selectTime": selectTime,
+        "endTime": endTime,
+        "costType": costType,
+        "beginTime": beginTime,
+        "endTime": endTime
+    }
+    $('#pagePrev').attr('disabled', true);
+    $('#pageNext').attr('disabled', true);
+    search(params);
+};
+function search(o) {
+    var tableInfo = [];
+    var midObject = null;
+
+    if (o.costType == '1') {
+        midObject = Lemon.payLog;
+    } else {
+        midObject = Lemon.getLog;
+    };
+
+    for (var i in midObject) {
+
+        if (midObject[i]) {
+            var a = +(new Date(i));
+
+            if (a > o.endTime && a < o.beginTime) {
+
+            } else {
+                tableInfo.push(midObject[i]);
+            }
+        } else {
+
+        }
+    }
+    var infoArray = [];
+    for (var j = 0; j < tableInfo.length; j++) {
+
+        if (o.selectType == 'cash') {
+
+            for (var k = 0; k < tableInfo.length ; k++) {
+
+                for (var l = 0; l < tableInfo[k].length; l++) {
+
+                    if (tableInfo[k][l].type == 'cash') {
+                        infoArray.push(tableInfo[k][l]);
+                    }
+                }
+            }
+        } else if (o.selectType == 'card') {
+            for (var k = 0; k < tableInfo.length ; k++) {
+
+                for (var l = 0; l < tableInfo[k].length; l++) {
+
+                    if (tableInfo[k][l].type == 'card') {
+                        infoArray.push(tableInfo[k][l]);
+                    }
+                }
+            }
+        } else {
+            for (var k = 0; k < tableInfo.length ; k++) {
+
+                for (var l = 0; l < tableInfo[k].length; l++) {
+
+                    if (tableInfo[k][l].type == 'yct') {
+                        infoArray.push(tableInfo[k][l]);
+                    }
+                }
+            }
+        }
+    };
+}
+
