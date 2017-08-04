@@ -69,16 +69,16 @@ PersonalFiance.prototype = {
 
     },
     checkCard : function () {
-        return this.card;
+        return Math.floor(this.card);
     },
     checkCash : function () {
-        return this.cash;
+        return Math.floor(this.cash);
     },
     checkYct : function () {
-        return this.yct;
+        return Math.floor(this.yct);
     },
     checkAll : function () {
-        return this.card + this.cash;
+        return Math.floor(this.card + this.cash);
     },
     checkAllCost : function () {
 
@@ -94,11 +94,19 @@ PersonalFiance.prototype = {
         var totalCostStr = '';
         for (var i in this.payLog) {
             for (var j = 0; j < this.payLog[i].length; j++) {
-                totalCostStr += ('I paid ' + this.payLog[i][j].cost + ' of ' + this.payLog[i][j].type + ' to do ' + this.payLog[i][j].costPurpose +' in ' +this.payLog[i][j].costDay  + '\n');
+                totalCostStr += (' In ' +this.payLog[i][j].costDay  + ' I paid ' + this.payLog[i][j].cost + ' of ' + this.payLog[i][j].type + ' to do ' + this.payLog[i][j].costPurpose + '\n');
             };
         };
-        totalCostStr += 'The total is: ' + this.checkAllCost();
+        totalCostStr += ' The total is:      ' + this.checkAllCost();
         console.log(totalCostStr);
+    },
+    checkAllRest : function () {
+        var restTotal = '';
+        restTotal += ' The rest of Card: ' + this.checkCard() + '\n';
+        restTotal += ' The rest of Cash: ' + this.checkCash() + '\n';
+        restTotal += ' The rest of Yct:  ' + this.checkYct() + '\n';
+
+        console.log(restTotal);
     },
     ifCanSubway : function () {
 

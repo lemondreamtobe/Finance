@@ -7,12 +7,23 @@
 <body>
     <script src="index.js"></script>
     <script>
-        var Lemon = new PersonalFiance();
-        Lemon.cost('card', 78, '2017 7 31', 'buy fruit of Mango');
-        Lemon.cost('yct', 1.6, '2017 7 31', 'subway');
-        Lemon.get('card', 1000, '2017 8 10', 'gongzi');
-
-        console.log(Lemon);
+        var Lemon = new PersonalFiance({
+            card : 4071.61,
+            cash : 1700,
+            yct : 110
+        });
+        Lemon.cost('card', 78, '2017 7 31', 'Buy fruit of Mango')
+             .cost('yct', 1.9 * 2, '2017 7 31', 'Subway')
+             .cost('yct', 1.9 * 2, '2017 8 1', 'Subway')
+             .cost('card', 10, '2017 8 1', 'Jquery B to buy model')
+             .cost('card', 448, '2017 8 1', 'JD baitiao')
+             .cost('yct', 1.9 * 2, '2017 8 2', 'Subway')
+             .cost('card', 24, '2017 8 2', 'Net cost')
+             .cost('card', 35, '2017 8 3', 'Bee mi')
+             .cost('yct', 1.9 * 2, '2017 8 3', 'Subway')
+            .cost('yct', 1.9 * 2, '2017 8 4', 'Subway')
+        Lemon.checkCostLip();
+        Lemon.checkAllRest();
     </script>
 </body>
 </html>
