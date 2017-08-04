@@ -178,22 +178,22 @@ function search(o) {
                 }
             }
         } else if (o.selectType == 'card') {
-            for (var k = 0; k < tableInfo.length ; k++) {
+            for (var u = 0; u < tableInfo.length ; u++) {
 
-                for (var l = 0; l < tableInfo[k].length; l++) {
+                for (var i = 0; i < tableInfo[u].length; i++) {
 
-                    if (tableInfo[k][l].type == 'card') {
-                        infoArray.push(tableInfo[k][l]);
+                    if (tableInfo[u][i].type == 'card') {
+                        infoArray.push(tableInfo[u][i]);
                     }
                 }
             }
         } else {
-            for (var k = 0; k < tableInfo.length ; k++) {
+            for (var q = 0; q < tableInfo.length ; q++) {
 
-                for (var l = 0; l < tableInfo[k].length; l++) {
+                for (var w = 0; w < tableInfo[w].length; w++) {
 
-                    if (tableInfo[k][l].type == 'yct') {
-                        infoArray.push(tableInfo[k][l]);
+                    if (tableInfo[q][w].type == 'yct') {
+                        infoArray.push(tableInfo[q][w]);
                     }
                 }
             }
