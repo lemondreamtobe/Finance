@@ -60,7 +60,23 @@
 				</div>
 				<div id="collapseOne" class="panel-collapse collapse">
 					<div class="panel-body">
-						
+						<div class="innerData">
+							<label>支出类型：</label>
+								<select id="payType" class="form-control innerControl">
+									<option value="card">card</option>
+									<option value="cash">cash</option>
+									<option value="yct">yct</option>
+								</select>
+						</div>
+						<div class="innerData">
+							<label>支出金额：</label>&nbsp;<input id="payNum" class="form-control innerControl">
+						</div>
+						<div class="innerData">
+							<label>支出目的：</label>&nbsp;<input id="payPurpose" class="form-control innerControl">
+						</div>
+						<div class="innerData" style="text-align: center">
+							<button class="btn btn-info newpayBtn">确定</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -76,21 +92,23 @@
 				</div>
 				<div id="collapseTwo" class="panel-collapse collapse">
 					<div class="panel-body">
-					</div>
-				</div>
-			</div>
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h4 class="panel-title">
-						<a data-toggle="collapse" data-parent="#accordion"
-						   data-target="#collapseThree">
-							<i class="fa fa-list-alt"></i><span  style="margin-left: 61px">New traffic</span>
-							<b class="caret" style="margin-left: 50px;"></b>
-						</a>
-					</h4>
-				</div>
-				<div id="collapseThree" class="panel-collapse collapse">
-					<div class="panel-body">
+						<div class="innerData">
+							<label>收入类型：</label>
+							<select id="payType" class="form-control innerControl">
+								<option value="card">card</option>
+								<option value="cash">cash</option>
+								<option value="yct">yct</option>
+							</select>
+						</div>
+						<div class="innerData">
+							<label>收入金额：</label>&nbsp;<input id="payNum" class="form-control innerControl">
+						</div>
+						<div class="innerData">
+							<label>收入来源：</label>&nbsp;<input id="payPurpose" class="form-control innerControl">
+						</div>
+						<div class="innerData" style="text-align: center">
+							<button class="btn btn-info newpayBtn">确定</button>
+						</div>
 					</div>
 				</div>
 			</div>

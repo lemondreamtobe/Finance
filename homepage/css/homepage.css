@@ -63,7 +63,18 @@ a:hover{text-decoration:none}
 .littleIMG{
 	margin-left: 62px;
 }
-
+.innerControl{
+    display: inline-block;
+    width: 142px;
+}
+.newpayBtn{
+    width: 120px;
+    text-align: center;
+    margin-top: 10px;
+}
+.panel-body{
+    border: 1px groove #272930;
+}
 .panel-default > .panel-heading {
     color: white;
     background-color: #272930;

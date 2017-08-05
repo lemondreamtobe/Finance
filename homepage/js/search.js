@@ -125,8 +125,8 @@ function onSearch() {
         case "3":
             var timeS = $('#timeStart').val() + ' 00:00:00';
             var timeE = $('#timeEnd').val() + ' 23:59:59';
-            beginTime = getTimeByDateStr(timeS);
-            endTime = getTimeByDateStr(timeE);
+            beginTime = +new Date(timeS);
+            endTime = +new Date(timeE);
             break;
     }
 
