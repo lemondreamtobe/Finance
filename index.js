@@ -28,8 +28,8 @@ PersonalFiance.prototype = {
         var costDate = new Date(date);
         var costDay = costDate.getFullYear() + ' ' + (costDate.getMonth() + 1) + ' ' + costDate.getDate();
         logObject.type = type;
-        logObject.cost = num;
-        logObject.costDay =costDay;
+        logObject.num = num;
+        logObject.time =costDay;
         logObject.costPurpose = purpose;
 
         if (this.payLog[costDay]) {
@@ -53,8 +53,8 @@ PersonalFiance.prototype = {
         var getDate = new Date(date);
         var getDay = getDate.getFullYear() + ' ' + (getDate.getMonth() + 1) + ' ' + getDate.getDate();
         logObject.type = type;
-        logObject.get = num;
-        logObject.getDay =getDay;
+        logObject.num = num;
+        logObject.time =getDay;
         logObject.getSource = source;
 
         if (this.getLog[getDay]) {
@@ -85,7 +85,7 @@ PersonalFiance.prototype = {
         var totalCost = 0;
         for (var i in this.payLog) {
             for (var j = 0; j < this.payLog[i].length; j++) {
-                totalCost += this.payLog[i][j].cost;
+                totalCost += this.payLog[i][j].num;
             }
         };
         return Math.floor(totalCost);
@@ -94,7 +94,7 @@ PersonalFiance.prototype = {
         var totalCostStr = '';
         for (var i in this.payLog) {
             for (var j = 0; j < this.payLog[i].length; j++) {
-                totalCostStr += (' In ' +this.payLog[i][j].costDay  + ' I paid ' + this.payLog[i][j].cost + ' of ' + this.payLog[i][j].type + ' to do ' + this.payLog[i][j].costPurpose + '\n');
+                totalCostStr += (' In ' +this.payLog[i][j].time  + ' I paid ' + this.payLog[i][j].num + ' of ' + this.payLog[i][j].type + ' to do ' + this.payLog[i][j].costPurpose + '\n');
             };
         };
         totalCostStr += ' The total is:      ' + this.checkAllCost();

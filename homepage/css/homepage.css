@@ -33,10 +33,10 @@
 	background: #272930;
 }
 #rightNav{
-	width: 1167px;
+	width: 81%;
 	height: 750px;
 	background: #F6F6F6;
-	float: right;
+	float: left;
 	padding: 15px 30px 30px 30px;
 }
 .infoPic{
@@ -59,9 +59,11 @@
 .userInfo{
 	padding: 18px 10px;
 }
+a:hover{text-decoration:none}
 .littleIMG{
-	margin-left: 50px;
+	margin-left: 62px;
 }
+
 .panel-default > .panel-heading {
     color: white;
     background-color: #272930;

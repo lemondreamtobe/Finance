@@ -69,7 +69,9 @@ $(function () {
         });
     initTable();
     $('#btnSearch').on('click', onSearch);
-
+    $('.panel-title').on('click', function (e) {
+        alert('a')
+    })
 });
 var Lemon = new PersonalFiance({
     card : 4071.61,
@@ -86,6 +88,7 @@ Lemon.cost('card', 78, '2017 7 31', 'Buy fruit of Mango')
     .cost('card', 35, '2017 8 3', 'Bee mi')
     .cost('yct', 1.9 * 2, '2017 8 3', 'Subway')
     .cost('yct', 1.9 * 2, '2017 8 4', 'Subway')
+    .cost('cash', 34.7+28+6.5+15, '2017 8 5', 'buy life usafes and vegetable and jianfa')
 function initTable(data) {
     //先销毁表格
     $('.table').bootstrapTable('destroy');
@@ -164,40 +167,35 @@ function search(o) {
         }
     }
     var infoArray = [];
-    for (var j = 0; j < tableInfo.length; j++) {
 
-        if (o.selectType == 'cash') {
+    if (o.selectType == 'cash') {
 
-            for (var k = 0; k < tableInfo.length ; k++) {
+        for (var k = 0; k < tableInfo.length ; k++) {
 
-                for (var l = 0; l < tableInfo[k].length; l++) {
+            for (var l = 0; l < tableInfo[k].length; l++) {
 
-                    if (tableInfo[k][l].type == 'cash') {
-                        infoArray.push(tableInfo[k][l]);
-                    }
-                }
-            }
-        } else if (o.selectType == 'card') {
-            for (var u = 0; u < tableInfo.length ; u++) {
-
-                for (var i = 0; i < tableInfo[u].length; i++) {
-
-                    if (tableInfo[u][i].type == 'card') {
-                        infoArray.push(tableInfo[u][i]);
-                    }
-                }
-            }
-        } else {
-            for (var q = 0; q < tableInfo.length ; q++) {
-
-                for (var w = 0; w < tableInfo[w].length; w++) {
-
-                    if (tableInfo[q][w].type == 'yct') {
-                        infoArray.push(tableInfo[q][w]);
-                    }
+                if (tableInfo[k][l].type == 'cash') {
+                    infoArray.push(tableInfo[k][l]);
                 }
             }
         }
-    };
+    } else if (o.selectType == 'card') {
+        for (var u = 0; u < tableInfo.length ; u++) {
+            for (var r = 0; r < tableInfo[u].length; r++) {
+                if (tableInfo[u][r].type == 'card') {
+                    infoArray.push(tableInfo[u][r]);
+                }
+            }
+        }
+    } else {
+        for (var q = 0; q < tableInfo.length ; q++) {
+            for (var w = 0; w < tableInfo[q].length; w++) {
+                if (tableInfo[q][w].type == 'yct') {
+                    infoArray.push(tableInfo[q][w]);
+                }
+            }
+        }
+    }
+    initTable(infoArray);
 }
 
