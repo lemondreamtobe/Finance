@@ -69,7 +69,7 @@ $(function () {
         });
     initTable();
     $('#btnSearch').on('click', onSearch);
-    parent.pay.payBtn.on('click', function () {
+    parent.pay.payBtn78.on('click', function () {
         var type = parent.pay.payType.val();
         var num = parent.pay.payNum.val();
         var costPurpose = parent.pay.payPurpose.val();
